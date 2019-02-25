@@ -35,12 +35,12 @@ export class SmartTableComponent {
         title: 'ID',
         type: 'number',
       },
-      firstName: {
-        title: 'First Name',
+      name: {
+        title: 'Name',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
+      image: {
+        title: 'Image',
         type: 'string',
       },
       username: {
@@ -64,7 +64,8 @@ export class SmartTableComponent {
     // const data = this.service.getData();
     // this.source.load(data);
     this.service.getTableData().subscribe(response =>{
-      console.log(response);
+      console.log(response.result);
+      this.source.load(response.result);
     })
   }
 
