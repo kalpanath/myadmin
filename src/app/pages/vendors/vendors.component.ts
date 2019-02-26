@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableService } from '../../@core/mock/smart-table.service';
 
@@ -9,7 +9,7 @@ import { SmartTableService } from '../../@core/mock/smart-table.service';
   nb-card {
     transform: translate3d(0, 0, 0);
   }
-`]
+`],
 })
 export class VendorsComponent {
 
@@ -60,10 +60,10 @@ export class VendorsComponent {
   constructor(private service: SmartTableService) {
     // const data = this.service.getData();
     // this.source.load(data);
-    this.service.getTableData().subscribe(response =>{
-      console.log(response.result);
+    this.service.getTableData().subscribe(response => {
+     // console.log(response.result);
       this.source.load(response.result);
-    })
+    });
   }
 
 }

@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
 
@@ -13,7 +13,7 @@ export class SmartTableService  {
     return this._http.get(path)
       // return this._http.get(AppConfig.API_URL + AppConfig.FRONT_END.JUMP_PAGES_DATA + pageSlug,)
       .map((response) => {
-        return response.json()
+        return response.json();
       });
   }
 }
