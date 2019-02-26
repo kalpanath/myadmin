@@ -15,7 +15,7 @@ import { SmartTableService } from '../../@core/mock/smart-table.service';
   ],
   declarations: [
     ...routedComponents,
-  ],providers: [SmartTableService],
+  ], providers: [SmartTableService],
 
 })
 export class TablesModule { }
