@@ -60,9 +60,9 @@ export class SmartTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
   constructor(private service: SmartTableService) {
-  this.service.getTableData().subscribe(response =>{
+  this.service.getTableData().subscribe(response => {
       this.source.load(response.result);
-    })
+    });
   }
 
   onDeleteConfirm(event): void {

@@ -12,11 +12,11 @@ import { VendorsComponent } from './vendors.component';
     ThemeModule,
     HttpModule,
     VendorsRoutingModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
   ],
   declarations: [
-    ...routedComponents,VendorsComponent,
-  ],providers: [SmartTableService],
+    ...routedComponents, VendorsComponent,
+  ], providers: [SmartTableService],
 
 })
 export class VendorsModule { }
