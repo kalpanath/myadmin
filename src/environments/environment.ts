@@ -10,5 +10,5 @@
 
 export const environment = {
   production: false,
-  ApiUrl:"https://www.kuchbhioncall.com/api/"
+  ApiUrl:'https://www.kuchbhioncall.com/api/',
 };

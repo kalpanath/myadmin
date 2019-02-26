@@ -1,8 +1,6 @@
 
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
-//import { environment } from '../../environments/environment';
-
 import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
 
@@ -17,7 +15,5 @@ export class SmartTableService  {
       .map((response) => {
         return response.json()
       });
-
-    // return this.data;
   }
 }
