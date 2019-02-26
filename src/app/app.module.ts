@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { VendorsComponent } from './pages/vendors/vendors.component';
+//import { VendorsComponent } from './pages/vendors/vendors.component';
 
 @NgModule({
   declarations: [AppComponent],
