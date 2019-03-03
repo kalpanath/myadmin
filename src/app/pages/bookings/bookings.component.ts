@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableService } from '../../@core/mock/smart-table.service';
+import { BookingsService } from '../../@core/mock/bookings-service';
 
 @Component({
   selector: 'ngx-vendors',
-  templateUrl: './vendors.component.html',
+  templateUrl: './bookings.component.html',
   styles: [`
   nb-card {
     transform: translate3d(0, 0, 0);
   }
 `],
 })
-export class VendorsComponent {
+export class BookingsComponent {
 
   settings = {
     add: {
@@ -29,39 +29,35 @@ export class VendorsComponent {
       confirmDelete: true,
     },
     columns: {
-      user_name: {
-        title: 'User Name',
+      id: {
+        title: 'ID',
         type: 'number',
       },
-      contact_name: {
+      name: {
         title: 'Name',
         type: 'string',
       },
-      email: {
-        title: 'Email',
+      service: {
+        title: 'Service',
         type: 'string',
       },
-      mobile: {
-        title: 'Mobile',
+      address: {
+        title: 'Address',
         type: 'string',
       },
-      city: {
-        title: 'City',
+      rcv_date: {
+        title: 'Date',
         type: 'string',
-      },
-      pin_code: {
-        title: 'Pin',
-        type: 'number',
-      },
+      }
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
-  constructor(private service: SmartTableService) {
+  constructor(private service: BookingsService) {
     // const data = this.service.getData();
     // this.source.load(data);
     this.service.getTableData().subscribe(response => {
-     // console.log(response.result);
+    console.log(response.data);
       this.source.load(response.data);
     });
   }

@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableService } from '../../@core/mock/smart-table.service';
+import { ChargesService } from '../../@core/mock/charges-service';
 
 @Component({
   selector: 'ngx-vendors',
-  templateUrl: './vendors.component.html',
-  styles: [`
-  nb-card {
-    transform: translate3d(0, 0, 0);
-  }
-`],
+  styleUrls: ['./charges.component.scss'],
+  templateUrl: './charges.component.html',
 })
-export class VendorsComponent {
+export class ChargesComponent {
 
   settings = {
     add: {
@@ -29,41 +25,39 @@ export class VendorsComponent {
       confirmDelete: true,
     },
     columns: {
-      user_name: {
-        title: 'User Name',
+      type: {
+        title: 'Type',
+        type: 'String',
+      },
+      charges: {
+        title: 'Charges',
         type: 'number',
       },
-      contact_name: {
-        title: 'Name',
+      created_at: {
+        title: 'Created At',
         type: 'string',
-      },
-      email: {
-        title: 'Email',
-        type: 'string',
-      },
-      mobile: {
-        title: 'Mobile',
-        type: 'string',
-      },
-      city: {
-        title: 'City',
-        type: 'string',
-      },
-      pin_code: {
-        title: 'Pin',
-        type: 'number',
-      },
+      }
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
-  constructor(private service: SmartTableService) {
+  constructor(private service: ChargesService) {
     // const data = this.service.getData();
     // this.source.load(data);
     this.service.getTableData().subscribe(response => {
-     // console.log(response.result);
+   // console.log(response.data);
       this.source.load(response.data);
     });
+  }
+
+
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+           console.log(event.data);
+     // event.confirm.resolve();
+    } else {
+      //event.confirm.reject();
+    }
   }
 
 }

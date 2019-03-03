@@ -12,6 +12,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/vendors',
   },
   {
+    title: 'Bookings',
+    icon: 'nb-home',
+    link: '/pages/bookings',
+  },
+  {
+    title: 'Discounts',
+    icon: 'nb-home',
+    link: '/pages/discounts',
+  },
+  {
+    title: 'Manage Charges',
+    icon: 'nb-home',
+    link: '/pages/charges',
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

@@ -22,6 +22,18 @@ const routes: Routes = [{
     loadChildren: './vendors/vendors.module#VendorsModule',
   },
   {
+    path: 'bookings',
+    loadChildren: './bookings/bookings.module#BookingsModule',
+  },
+  {
+    path: 'discounts',
+    loadChildren: './discounts/discounts.module#DiscountsModule',
+  },
+  {
+    path: 'charges',
+    loadChildren: './charges/charges.module#ChargesModule',
+  },
+  {
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
