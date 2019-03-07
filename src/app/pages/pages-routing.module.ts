@@ -45,7 +45,11 @@ const routes: Routes = [{
     path: '**',
     component: NotFoundComponent,
   }],
-}];
+},{
+  path: 'auths',
+  component: PagesComponent,
+  loadChildren: './pages/auth/auth.module#NgxAuthModule',
+},];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -12,6 +12,7 @@ import { MENU_ITEMS } from './pages-menu';
     </ngx-sample-layout>
   `,
 })
+
 export class PagesComponent {
 
   menu = MENU_ITEMS;
