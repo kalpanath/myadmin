@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NbAuthModule, NbPasswordAuthStrategy, NbAuthJWTToken } from '@nebular/auth';
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,6 +26,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+          baseEndpoint: '',
+          login: {
+            // ...
+            endpoint: 'http://api.kuchbhioncall.com/public/adminlogin',
+          },
+        }),
+      ],
+      forms: {},
+    }), 
   ],
   bootstrap: [AppComponent],
   providers: [
