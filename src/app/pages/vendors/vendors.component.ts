@@ -14,20 +14,21 @@ import { SmartTableService } from '../../@core/mock/smart-table.service';
 export class VendorsComponent {
 
   settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
+    actions: false,
+    // add: {
+    //   addButtonContent: '<i class="nb-plus"></i>',
+    //   createButtonContent: '<i class="nb-checkmark"></i>',
+    //   cancelButtonContent: '<i class="nb-close"></i>',
+    // },
+    // edit: {
+    //   editButtonContent: '<i class="nb-edit"></i>',
+    //   saveButtonContent: '<i class="nb-checkmark"></i>',
+    //   cancelButtonContent: '<i class="nb-close"></i>',
+    // },
+    // delete: {
+    //   deleteButtonContent: '<i class="nb-trash"></i>',
+    //   confirmDelete: true,
+    // },
     columns: {
       user_name: {
         title: 'User Name',
@@ -52,6 +53,13 @@ export class VendorsComponent {
       pin_code: {
         title: 'Pin',
         type: 'number',
+      },
+      edit: {
+        title: 'Edit',
+        type: 'html',
+        valuePrepareFunction:(cell,row)=>{
+          return '<a title="See Detail Product "href="pages/update-vendor/'+row.id+'"> <i class="ion-edit"></i></a>'
+          },
       },
     },
   };

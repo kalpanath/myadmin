@@ -13,7 +13,8 @@ const routes: Routes = [{
   {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
-  }, {
+  }, 
+  {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
   },
@@ -21,6 +22,11 @@ const routes: Routes = [{
     path: 'vendors',
     loadChildren: './vendors/vendors.module#VendorsModule',
   },
+  {
+    path: 'update-vendor/:vendorid',
+    loadChildren: './vendors/update-vendor/update-vendor.module#UpdateVendorModule',
+  },
+ 
   {
     path: 'bookings',
     loadChildren: './bookings/bookings.module#BookingsModule',
@@ -45,11 +51,7 @@ const routes: Routes = [{
     path: '**',
     component: NotFoundComponent,
   }],
-},{
-  path: 'auths',
-  component: PagesComponent,
-  loadChildren: './pages/auth/auth.module#NgxAuthModule',
-},];
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
