@@ -27,7 +27,7 @@ export class UpdateVendorComponent implements OnInit {
   UpdateVendorProfile(vdata,local_data) {
    // console.log(local_data.value);
    this.vendor_id = this.route.snapshot.paramMap.get('vendorid');
-   this.service.UpdateVendorProfile(this.vendor_id,local_data).subscribe(response => {
+   this.service.UpdateVendorProfile(this.VendorData,local_data).subscribe(response => {
      this.VendorData = response.data;
    });
     console.log("test"+JSON.stringify(vdata));
