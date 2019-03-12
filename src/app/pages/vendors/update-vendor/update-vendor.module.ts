@@ -5,6 +5,7 @@ import { ThemeModule } from '../../../@theme/theme.module';
 import { UpdateVendorComponent } from './update-vendor.component';
 import { UpdateVendorsRoutingModule , routedComponents} from './update-vendors-routing.module';
 import { GetVendor } from '../../../@core/mock/get-vendor-data';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { GetVendor } from '../../../@core/mock/get-vendor-data';
     HttpModule,
     UpdateVendorsRoutingModule,
     Ng2SmartTableModule,
+    FormsModule,
   ],
   declarations: [
     ...routedComponents, UpdateVendorComponent,
