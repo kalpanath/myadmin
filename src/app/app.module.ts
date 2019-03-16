@@ -13,33 +13,43 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NbAuthModule, NbPasswordAuthStrategy, NbAuthJWTToken } from '@nebular/auth';
-
+import { NbAuthModule, NbPasswordAuthStrategy, NbAuthSimpleToken } from '@nebular/auth';
+import { NgxAuthModule } from './pages/auth/auth.module';
+import { AuthGuard } from './auth-guard.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
+    NgxAuthModule,
     CoreModule.forRoot(),
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
-          token: {
-            class: NbAuthJWTToken,
-          }
+          baseEndpoint: 'http://api.kuchbhioncall.com/public',
+          login: {
+            // ...
+            endpoint: '/adminlogin',
+          },
+              token: {
+                class: NbAuthSimpleToken,
+                key: 'token',
+              },         
         }),
       ],
       forms: {},
     }), 
   ],
   bootstrap: [AppComponent],
-  providers: [
+  providers: [AuthGuard,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })
