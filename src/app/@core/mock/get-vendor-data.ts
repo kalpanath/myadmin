@@ -23,11 +23,10 @@ export class GetVendor  {
   UpdateVendorProfile(vdata,token) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
+        'Content-Type':  'application/x-www-form-urlencoded',
+
       })
     };
-
     const path = environment.ApiUrl + `UpdateVendorProfile`;
       return this._http.post(path, vdata, JSON.stringify(httpOptions))
       .map((response) => {
