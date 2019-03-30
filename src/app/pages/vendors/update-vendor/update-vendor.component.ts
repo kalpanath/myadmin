@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateVendorComponent implements OnInit {
   public vendor_id: string;
   VendorData = {};
+  //Services = "";
   ngOnInit() {
     var local_data = JSON.parse(localStorage.getItem('auth_app_token'));
    }
@@ -30,7 +31,7 @@ export class UpdateVendorComponent implements OnInit {
    this.service.UpdateVendorProfile(this.VendorData,local_data).subscribe(response => {
      this.VendorData = response.data;
    });
-    console.log("test"+JSON.stringify(vdata));
+   // console.log("test"+JSON.stringify(vdata));
   }
   
 }
