@@ -14,23 +14,24 @@ import { DiscountsService } from '../../@core/mock/discounts-service';
 export class DiscountsComponent {
 
   settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-      confirmCreate: true,
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-      confirmSave: true,
+    actions: false,
+    // add: {
+    //   addButtonContent: '<i class="nb-plus"></i>',
+    //   createButtonContent: '<i class="nb-checkmark"></i>',
+    //   cancelButtonContent: '<i class="nb-close"></i>',
+    //   confirmCreate: true,
+    // },
+    // edit: {
+    //   editButtonContent: '<i class="nb-edit"></i>',
+    //   saveButtonContent: '<i class="nb-checkmark"></i>',
+    //   cancelButtonContent: '<i class="nb-close"></i>',
+    //   confirmSave: true,
 
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
+    // },
+    // delete: {
+    //   deleteButtonContent: '<i class="nb-trash"></i>',
+    //   confirmDelete: true,
+    // },
     
     columns: {
       coupon_code: {
@@ -49,10 +50,13 @@ export class DiscountsComponent {
         title: 'End Date',
         type: 'string',
       },
-      created_at: {
-        title: 'Created On',
-        type: 'string',
-      }
+      edit: {
+        title: 'Edit',
+        type: 'html',
+        valuePrepareFunction:(cell,row)=>{
+          return '<a title="See Detail Product "href="pages/update-discount/'+row.id+'"> <i class="ion-edit"></i></a>'
+          },
+      },
     },
   };
 

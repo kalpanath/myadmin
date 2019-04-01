@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Default Inputs</nb-card-header>
+      <nb-card-body>
+        <div class="row full-name-inputs">
+          <div class="col-sm-6 input-group">
+            <label for="exampleInputEmail1">Discount Code</label>
+            <input type="text" nbInput fullWidth  [(ngModel)]="DiscountData.coupon_code" placeholder="Discount Code">
+          </div>
+          <div class="col-sm-6 input-group">
+            <label for="exampleInputEmail1">Discount Amount</label>
+            <input type="text" nbInput fullWidth [(ngModel)]="DiscountData.discount_amount" placeholder="Discount Amount">
+          </div>
+        </div>
+
+        <div class="row full-name-inputs">
+          <div class="col-sm-6 input-group">
+            <label for="exampleInputEmail1">Vendor ID</label>
+            <input type="text" nbInput fullWidth  [(ngModel)]="DiscountData.vendor_id" placeholder="Vendor ID">
+          </div>
+          <div class="col-sm-6 input-group">
+              <label for="exampleInputEmail1">Vendor Assigned</label>
+            <input type="text" nbInput fullWidth [(ngModel)]="DiscountData.vendor_assigned" placeholder="Vendor Assigned">
+          </div>
+        </div>
+
+        
+        <div class="row full-name-inputs">
+          <div class="col-sm-6 input-group">
+            <label for="exampleInputEmail1">Start Date</label>
+            
+            <input nbInput
+            placeholder="Start Date"    nbInput fullWidth 
+            [nbDatepicker]="formpicker1" [(ngModel)]="DiscountData.start_date"> <nb-datepicker #formpicker1 format="yyyy-MM-dd" ></nb-datepicker>
+          </div>
+          <div class="col-sm-6 input-group">
+            <label for="exampleInputEmail1">End Date</label>
+            <input nbInput
+            placeholder="End Date" [(value)]="DiscountData.end_date" nbInput fullWidth 
+            [nbDatepicker]="formpicker"> <nb-datepicker #formpicker format="yyyy-MM-dd"></nb-datepicker>
+          </div>
+        </div>
+         <br>
+        <button type="button" (click)="UpdateDiscountData(DiscountData)" class="btn btn-primary">Update</button>
+      </nb-card-body>
+    </nb-card>
+  </div>  
+</div>
