@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { DiscountsService } from '../../@core/mock/discounts-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-discount',
@@ -61,10 +62,15 @@ export class DiscountsComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
-  constructor(private service: DiscountsService) {
+  
+  constructor(private service: DiscountsService,private router: Router) {
     // const data = this.service.getData();
     // this.source.load(data);
+    console.log(this.router.url);
+
     this.service.getTableData().subscribe(response => {
+
+      
       this.source.load(response.data);
     });
   }

@@ -25,7 +25,17 @@ export class UpdateDiscountComponent implements OnInit {
     this.dis_id = this.route.snapshot.paramMap.get('discountid');
     this.service.getDiscountData(this.dis_id).subscribe(response => {
      // this.source.load(response.data);
+     
+     var start_date = new Date(response.data.start_date);
+     var end_date = new Date(response.data.end_date);
+     delete response.data.start_date;
+     response.data.start_date=start_date;
+
+     delete response.data.end_date;
+     response.data.end_date=end_date;
+     
      this.DiscountData = response.data;
+     
     });
   }
 

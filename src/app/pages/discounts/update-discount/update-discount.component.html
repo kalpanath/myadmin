@@ -28,8 +28,7 @@
         
         <div class="row full-name-inputs">
           <div class="col-sm-6 input-group">
-            <label for="exampleInputEmail1">Start Date</label>
-            
+            <label for="exampleInputEmail1">Start Date</label>            
             <input nbInput
             placeholder="Start Date"    nbInput fullWidth 
             [nbDatepicker]="formpicker1" [(ngModel)]="DiscountData.start_date"> <nb-datepicker #formpicker1 format="yyyy-MM-dd" ></nb-datepicker>
@@ -37,7 +36,7 @@
           <div class="col-sm-6 input-group">
             <label for="exampleInputEmail1">End Date</label>
             <input nbInput
-            placeholder="End Date" [(value)]="DiscountData.end_date" nbInput fullWidth 
+            placeholder="End Date" [(ngModel)]="DiscountData.end_date" nbInput fullWidth 
             [nbDatepicker]="formpicker"> <nb-datepicker #formpicker format="yyyy-MM-dd"></nb-datepicker>
           </div>
         </div>

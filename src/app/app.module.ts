@@ -17,6 +17,8 @@ import { NbAuthModule, NbPasswordAuthStrategy, NbAuthSimpleToken } from '@nebula
 import { NgxAuthModule } from './pages/auth/auth.module';
 import { AuthGuard } from './auth-guard.service';
 import { FormsModule } from '@angular/forms';
+import { NbDatepickerModule } from '@nebular/theme';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
+    NbDatepickerModule.forRoot(),
     NgxAuthModule,
     CoreModule.forRoot(),
     NbAuthModule.forRoot({

@@ -26,7 +26,6 @@ const routes: Routes = [{
     path: 'update-vendor/:vendorid',
     loadChildren: './vendors/update-vendor/update-vendor.module#UpdateVendorModule',
   },
- 
   {
     path: 'bookings',
     loadChildren: './bookings/bookings.module#BookingsModule',
@@ -36,13 +35,18 @@ const routes: Routes = [{
     loadChildren: './discounts/discounts.module#DiscountsModule',
   },
   {
+    path: 'update-discount/:discountid',
+    loadChildren: './discounts/update-discount/update-discount.module#UpdateDiscountModule',
+  },
+  {
     path: 'charges',
     loadChildren: './charges/charges.module#ChargesModule',
   },
   {
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
-  }, {
+  },
+  {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',

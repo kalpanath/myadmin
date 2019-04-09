@@ -53,7 +53,7 @@ export class ChargesComponent {
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
-           console.log(event.data);
+       //    console.log(event.data);
      // event.confirm.resolve();
     } else {
       //event.confirm.reject();

@@ -19,6 +19,15 @@ export class DiscountsService  {
       });
   }
 
+  getDiscountData(id) {
+    const path = environment.ApiUrl + `getDiscountData`;
+    return this._http.post(path,{"coupon_code":id})
+      // return this._http.get(AppConfig.API_URL + AppConfig.FRONT_END.JUMP_PAGES_DATA + pageSlug,)
+      .map((response) => {
+        return response.json();
+      });
+  }
+
   addDiscountCode(vdata,token) {
     const httpOptions = {
       headers: new HttpHeaders({

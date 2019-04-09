@@ -26,64 +26,64 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-home',
     link: '/pages/charges',
   },
-  {
-    title: 'FEATURES',
-    group: true,
-  },
-  {
-    title: 'Forms',
-    icon: 'nb-compose',
-    children: [
-      {
-        title: 'Form Inputs',
-        link: '/pages/forms/inputs',
-      },
-      {
-        title: 'Form Layouts',
-        link: '/pages/forms/layouts',
-      },
-      {
-        title: 'Buttons',
-        link: '/pages/forms/buttons',
-      },
-      {
-        title: 'Datepicker',
-        link: '/pages/forms/datepicker',
-      },
-    ],
-  },
-  {
-    title: 'Editors',
-    icon: 'nb-title',
-    children: [
-      {
-        title: 'TinyMCE',
-        link: '/pages/editors/tinymce',
-      },
-      {
-        title: 'CKEditor',
-        link: '/pages/editors/ckeditor',
-      },
-    ],
-  },
-  {
-    title: 'Tables',
-    icon: 'nb-tables',
-    children: [
-      {
-        title: 'Smart Table',
-        link: '/pages/tables/smart-table',
-      },
-    ],
-  },
-  {
-    title: 'Miscellaneous',
-    icon: 'nb-shuffle',
-    children: [
-      {
-        title: '404',
-        link: '/pages/miscellaneous/404',
-      },
-    ],
-  },
+  // {
+  //   title: 'FEATURES',
+  //   group: true,
+  // },
+  // {
+  //   title: 'Forms',
+  //   icon: 'nb-compose',
+  //   children: [
+  //     {
+  //       title: 'Form Inputs',
+  //       link: '/pages/forms/inputs',
+  //     },
+  //     {
+  //       title: 'Form Layouts',
+  //       link: '/pages/forms/layouts',
+  //     },
+  //     {
+  //       title: 'Buttons',
+  //       link: '/pages/forms/buttons',
+  //     },
+  //     {
+  //       title: 'Datepicker',
+  //       link: '/pages/forms/datepicker',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Editors',
+  //   icon: 'nb-title',
+  //   children: [
+  //     {
+  //       title: 'TinyMCE',
+  //       link: '/pages/editors/tinymce',
+  //     },
+  //     {
+  //       title: 'CKEditor',
+  //       link: '/pages/editors/ckeditor',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Tables',
+  //   icon: 'nb-tables',
+  //   children: [
+  //     {
+  //       title: 'Smart Table',
+  //       link: '/pages/tables/smart-table',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Miscellaneous',
+  //   icon: 'nb-shuffle',
+  //   children: [
+  //     {
+  //       title: '404',
+  //       link: '/pages/miscellaneous/404',
+  //     },
+  //   ],
+  // },
 ];

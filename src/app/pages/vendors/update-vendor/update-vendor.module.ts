@@ -6,6 +6,7 @@ import { UpdateVendorComponent } from './update-vendor.component';
 import { UpdateVendorsRoutingModule , routedComponents} from './update-vendors-routing.module';
 import { GetVendor } from '../../../@core/mock/get-vendor-data';
 import { FormsModule } from '@angular/forms';
+import { NbDatepickerModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     HttpModule,
     UpdateVendorsRoutingModule,
     Ng2SmartTableModule,
+    NbDatepickerModule,
     FormsModule,
   ],
   declarations: [
